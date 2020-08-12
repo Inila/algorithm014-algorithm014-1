@@ -77,3 +77,23 @@ func main() {
 	func2(nums)
 	func3(nums)
 }
+
+/*============= 二刷 2-5 =============== */
+func func52(nums []int) {
+	length := len(nums)
+	if length == 0 {
+		return
+	}
+
+	j := 0 
+	for i :=0; i<length;i++ {
+		if nums[i] != 0 {
+			nums[j] = nums[i]
+			if (j != i) {
+				nums[i] = 0
+			}
+			j++
+		}
+	}
+	fmt.Printf("%+v", nums)
+}
