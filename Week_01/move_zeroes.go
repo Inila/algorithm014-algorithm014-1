@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 )
+
 /*
 	Move Zeroes: 零移动
 	给定一个数组 nums, 编写一个函数，将所有 0 元素移动到数组末尾，同时保持非零元素相对顺序
@@ -20,8 +21,8 @@ func func1(nums []int) {
 		return
 	}
 
-	j := 0 
-	for i :=0; i < length; i++ {
+	j := 0
+	for i := 0; i < length; i++ {
 		if nums[i] != 0 {
 			tmp := nums[j]
 			nums[j] = nums[i]
@@ -32,7 +33,6 @@ func func1(nums []int) {
 	fmt.Printf("func1: %+v\n", nums)
 }
 
-
 // 双指针解法
 func func2(nums []int) {
 	length := len(nums)
@@ -40,11 +40,11 @@ func func2(nums []int) {
 		return
 	}
 
-	j := 0 
-	for i :=0; i < length; i++ {
+	j := 0
+	for i := 0; i < length; i++ {
 		if nums[i] != 0 {
 			nums[j] = nums[i]
-			if (i != j) {
+			if i != j {
 				nums[i] = 0
 			}
 			j++
@@ -72,7 +72,7 @@ func func3(nums []int) {
 }
 
 func main() {
-	nums  := []int{0, 1, 3, 0, 4}
+	nums := []int{0, 1, 3, 0, 4}
 	func1(nums)
 	func2(nums)
 	func3(nums)
@@ -85,15 +85,34 @@ func func52(nums []int) {
 		return
 	}
 
-	j := 0 
-	for i :=0; i<length;i++ {
+	j := 0
+	for i := 0; i < length; i++ {
 		if nums[i] != 0 {
 			nums[j] = nums[i]
-			if (j != i) {
+			if j != i {
 				nums[i] = 0
 			}
 			j++
 		}
 	}
 	fmt.Printf("%+v", nums)
+}
+
+/*============= 二刷 3-5 =============== */
+func func53(nums []int) {
+	length := len(nums)
+	if length == 0 {
+		return
+	}
+
+	j := 0
+	for i := 0; i < length; i++ {
+		if nums[i] != 0 {
+			nums[j] = nums[i]
+			if j != i {
+				nums[i] == 0
+			}
+			j++
+		}
+	}
 }
