@@ -48,7 +48,3 @@ func threeSum1(nums []int) [][]int {
 	}
 	return ans
 }
-
-func main() {
-
-}
